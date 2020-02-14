@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -23,6 +24,11 @@ module.exports = {
       filename: "./index.html"
     })
   ],
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
   devServer: {
     contentBase: './dist',
     hot: true
