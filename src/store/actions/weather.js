@@ -1,4 +1,4 @@
-export const RECEIVE_WEATHER = 'RECEIVE_WEATHER';
+export const RECEIVE_WEATHER = 'ADD_WEATHER';
 
 export function receiveWeather(weather) {
   return {

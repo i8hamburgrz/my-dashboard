@@ -1,7 +1,7 @@
 import request from '../request';
 
 const GNEWS_TOKEN = 'dac4753d4c9b91b189bf0686059a3ae1';
-export const RECEIVE_NEWS = 'RECEIVE_NEWS';
+export const RECEIVE_NEWS = 'ADD_NEWS';
 
 function receiveNews(news) {
   return {
