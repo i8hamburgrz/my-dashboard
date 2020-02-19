@@ -1,8 +1,8 @@
-import { RECEIVE_WEATHER } from '../actions/weather';
+import { ADD_WEATHER } from '../actions/weather';
 
 function weatherReducer(state = {}, action) {
   switch(action.type) {
-    case RECEIVE_WEATHER:
+    case ADD_WEATHER:
       return {
         ...state,
         ...state.weather

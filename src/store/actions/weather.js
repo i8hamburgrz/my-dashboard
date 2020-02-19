@@ -1,8 +1,8 @@
-export const RECEIVE_WEATHER = 'ADD_WEATHER';
+export const ADD_WEATHER = 'ADD_WEATHER';
 
-export function receiveWeather(weather) {
+export function addWeather(weather) {
   return {
-    type: RECEIVE_WEATHER,
+    type: ADD_WEATHER,
     weather
   }
 }
