@@ -1,29 +1,36 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import styled from "styled-components";
-import { getAllNews } from "../store/actions/news"
+import User from "./user/User";
+import Weather from "./weather/Weather";
+import { getAllNews } from "../store/actions/news";
+import { getAllWeather } from "../store/actions/weather";
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
+const HeaderWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 30px auto 0;
+`
 
 class App extends Component {
   componentDidMount() {
-    const { getAllNews } = this.props
+    const { getAllNews, getAllWeather } = this.props
     getAllNews();
+    getAllWeather();
   }
 
   render() {
     return (
-      <Title>Hello, world!</Title>
+      <HeaderWrap>
+        <User />
+        <Weather />
+      </HeaderWrap>
     )
   }
 }
 
 export default connect(
   null, 
-  { getAllNews }
+  { getAllNews, getAllWeather }
 )(App);

@@ -1,8 +1,11 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    main: ['./src/index.js', './src/main.css']
+  },
   module: {
     rules: [
       {
@@ -12,6 +15,10 @@ module.exports = {
       },{
         test: /\.html$/,
         use: ["html-loader"]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -22,7 +29,22 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
-    })
+    }),
+    new HtmlWebpackTagsPlugin(
+      { 
+        tags: [], 
+        links: [
+          {
+            path: 'src/main.css',
+            publicPath: true,
+            attributes: {
+              rel: 'text/css'
+            }
+          }
+        ],
+        append: true 
+      }
+    )
   ],
   output: {
     path: __dirname + '/dist',

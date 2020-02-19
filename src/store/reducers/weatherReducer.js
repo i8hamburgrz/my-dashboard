@@ -5,7 +5,7 @@ function weather(state = {}, action) {
     case ADD_WEATHER:
       return {
         ...state,
-        ...state.weather
+        ...action.weather
       }
     default: 
       return state;
