@@ -1,6 +1,6 @@
 import { RECEIVE_USER } from '../actions/user';
 
-function userReducer(state = {}, action) {
+function user(state = {}, action) {
   switch(action.type) {
     case RECEIVE_USER: {
       return {
@@ -13,4 +13,4 @@ function userReducer(state = {}, action) {
   }
 }
 
-export default userReducer;
+export default user;

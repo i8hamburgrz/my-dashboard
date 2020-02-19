@@ -1,6 +1,6 @@
 import { ADD_WEATHER } from '../actions/weather';
 
-function weatherReducer(state = {}, action) {
+function weather(state = {}, action) {
   switch(action.type) {
     case ADD_WEATHER:
       return {
@@ -13,4 +13,4 @@ function weatherReducer(state = {}, action) {
 
 }
 
-export default weatherReducer;
+export default weather;

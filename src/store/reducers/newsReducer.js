@@ -1,6 +1,6 @@
 import { ADD_NEWS } from '../actions/news';
 
-function newsReducer(state = {}, action) {
+function news(state = {}, action) {
   switch(action.type) {
     case ADD_NEWS:
       return {
@@ -12,4 +12,4 @@ function newsReducer(state = {}, action) {
   }
 }
 
-export default newsReducer;
+export default news;
