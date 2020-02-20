@@ -12,7 +12,11 @@ const HeaderWrap = styled.div`
   max-width: 1200px;
   margin: 30px auto 0;
 `
-
+const Notice = styled.div`
+  font-size: 9px;
+  margin: 10px 0;
+  text-align: center;
+`
 class App extends Component {
   componentDidMount() {
     const { getAllNews, getAllWeather } = this.props
@@ -22,10 +26,14 @@ class App extends Component {
 
   render() {
     return (
-      <HeaderWrap>
-        <User />
-        <Weather />
-      </HeaderWrap>
+      <React.Fragment>
+        <HeaderWrap>
+          <User />
+          <Weather />
+        </HeaderWrap>
+        <Notice>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></Notice>
+      </React.Fragment>
+      
     )
   }
 }

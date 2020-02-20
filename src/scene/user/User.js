@@ -4,6 +4,9 @@ import _ from "lodash";
 import moment from 'moment'
 import styled from "styled-components";
 
+import Pin from "../../images/pin.svg";
+import Time from "../../images/time.svg";
+
 const Wrapper = styled.div`
   flex-basis: 25%;
   height: 500px;
@@ -50,11 +53,13 @@ function User(props) {
       <TitleTwo>Steven Brand</TitleTwo>
 
       <InfoWrap>
+        <img src={Pin} />
         <InfoTitle>Location</InfoTitle>
         <InfoDesc>{props.location}</InfoDesc>
       </InfoWrap>
 
       <InfoWrap>
+        <img src={Time} />
         <InfoTitle>Current Time</InfoTitle>
         <InfoDesc>{moment.unix(props.time).format("MMM DD, YYYY")}</InfoDesc>
       </InfoWrap>
