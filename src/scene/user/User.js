@@ -9,7 +9,6 @@ import Time from "../../images/time.svg";
 
 const Wrapper = styled.div`
   flex-basis: 25%;
-  height: 500px;
   margin-right: 30px;
   background: #71879a;
   box-shadow: 0px 6px 25px -18px #000;
