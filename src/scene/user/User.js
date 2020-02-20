@@ -13,10 +13,18 @@ const Wrapper = styled.div`
   margin-right: 30px;
   background: #71879a;
   box-shadow: 0px 6px 25px -18px #000;
-  padding: 15px;
+  padding: 30px 15px;
   box-sizing: border-box;
   color: #fff;
 `;
+const Avatar = styled.div`
+  width: 100px;
+  height: 100px;
+  background: gray;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  border: 2px solid #fff;
+`
 const TitleOne = styled.h1`
   margin: 0;
   font-size: 14px;
@@ -34,6 +42,12 @@ const TitleTwo = styled.h2`
 const InfoWrap = styled.div`
   width: 100%;
   margin-top: 30px;
+  display: flex;
+
+  img {
+    width: 27px;
+    margin-right: 10px;
+  }
 `;
 const InfoTitle = styled.div`
   font-size: 14px;
@@ -41,7 +55,7 @@ const InfoTitle = styled.div`
   font-weight: 300;
 `;
 const InfoDesc = styled.div`
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 1px;
   font-weight: 300;
 `;
@@ -49,19 +63,26 @@ const InfoDesc = styled.div`
 function User(props) {
   return (
     <Wrapper>
+      <Avatar></Avatar>
       <TitleOne>Welcome</TitleOne>
       <TitleTwo>Steven Brand</TitleTwo>
 
       <InfoWrap>
         <img src={Pin} />
-        <InfoTitle>Location</InfoTitle>
-        <InfoDesc>{props.location}</InfoDesc>
+
+        <div>
+          <InfoTitle>Location</InfoTitle>
+          <InfoDesc>{props.location}</InfoDesc>
+        </div>
       </InfoWrap>
 
       <InfoWrap>
         <img src={Time} />
-        <InfoTitle>Current Time</InfoTitle>
-        <InfoDesc>{moment.unix(props.time).format("MMM DD, YYYY")}</InfoDesc>
+
+        <div>
+          <InfoTitle>Current Time</InfoTitle>
+          <InfoDesc>{moment.unix(props.time).format("MMM DD, YYYY")}</InfoDesc>
+        </div>
       </InfoWrap>
     </Wrapper>
   )
